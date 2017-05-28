@@ -1,0 +1,26 @@
+version: '2'
+services:
+  server:
+    build: ./server
+    image: test_server:latest
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "8888:8080"
+    volumes:
+        - ./dependencies/:/root/.gradle
+  postgres:
+    image: 'postgres'
+    container_name: 'postgres'
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: localhost
+      POSTGRES_DB: jsonapisimulation
+    volumes:
+      - './data/postgres/:/var/lib/postgresql/data'
+    expose:
+      - '5432'
+
+    

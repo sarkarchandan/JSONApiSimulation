@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ClientSideAndroid</string>
+
+    <!--String resources for Network operations-->
+    <string name="datasource_base_url" translatable="false">http://192.168.1.100:8888/server/endpoint/rest/faculties</string>
+    <string name="data_type_general" translatable="false">general</string>
+</resources>

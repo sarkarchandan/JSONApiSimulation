@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+
+    <named-query name="findAllFacultyGroups">
+        <query>
+            SELECT NEW de.uniba.jsonApiSimulation.shared.model.FacultyGroup(facultyGroupEntity.facultyGroupId,facultyGroupEntity.facultyGroupName,facultyGroupEntity.facultyGroupAbbreviation,facultyGroupEntity.getFacultyGroupHead)
+            FROM FacultyGroupEntity facultyGroupEntity</query>
+    </named-query>
+
+    <named-query name="findFacultyGroupNamesWithAbbreviations">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.shared.model.FacultyGroup(facultyGroupEntity.facultyGroupName,facultyGroupEntity.facultyGroupAbbreviation)
+            FROM FacultyGroupEntity facultyGroupEntity</query>
+    </named-query>
+
+    <named-query name="findFacultyGroupEntityByAbbreviation">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.backend.persistence.FacultyGroupEntity(facultyGroupEntity.facultyGroupId,facultyGroupEntity.facultyGroupName,facultyGroupEntity.facultyGroupAbbreviation,facultyGroupEntity.getFacultyGroupHead)
+            FROM FacultyGroupEntity facultyGroupEntity
+            WHERE facultyGroupEntity.facultyGroupAbbreviation = :facultyGroupAbbreviation</query>
+    </named-query>
+
+    <named-query name="findAllCourses">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.backend.persistence.CourseEntity(courseEntity.courseId,courseEntity.courseAbbreviation,courseEntity.courseName,courseEntity.termCourseOfferedIn,courseEntity.facultyGroupEntity)
+            FROM CourseEntity courseEntity</query>
+    </named-query>
+
+    <named-query name="findAllFacultyGroupEntity">
+        <query>
+            SELECT NEW de.uniba.jsonApiSimulation.backend.persistence.FacultyGroupEntity(facultyGroupEntity.facultyGroupId,facultyGroupEntity.facultyGroupName,facultyGroupEntity.facultyGroupAbbreviation,facultyGroupEntity.getFacultyGroupHead)
+            FROM FacultyGroupEntity facultyGroupEntity</query>
+    </named-query>
+
+    <named-query name="findAllCoursesBySpecificFacultyGroup">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.backend.persistence.CourseEntity(courseEntity.courseId,courseEntity.courseAbbreviation,courseEntity.courseName,courseEntity.termCourseOfferedIn,courseEntity.facultyGroupEntity)
+            FROM CourseEntity courseEntity
+            WHERE courseEntity.facultyGroupEntity = :facultyGroupEntity</query>
+    </named-query>
+
+    <named-query name="findAllSimpleCourses">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.shared.model.SimpleCourse(courseEntity.courseId,courseEntity.courseAbbreviation,courseEntity.courseName,courseEntity.termCourseOfferedIn,courseEntity.facultyGroupEntity.facultyGroupAbbreviation)
+            FROM CourseEntity courseEntity</query>
+    </named-query>
+
+    <named-query name="findAllSimpleCoursesOfferedByGivenFaculty">
+        <query>SELECT NEW de.uniba.jsonApiSimulation.shared.model.SimpleCourse(courseEntity.courseId,courseEntity.courseAbbreviation,courseEntity.courseName,courseEntity.termCourseOfferedIn,courseEntity.facultyGroupEntity.facultyGroupAbbreviation)
+            FROM CourseEntity courseEntity WHERE courseEntity.facultyGroupEntity =:facultyGroupEntity</query>
+    </named-query>
+
+</entity-mappings>
