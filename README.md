@@ -1,5 +1,5 @@
 # JSON Api Simulation
-This project has simulate a RESTful API offering data persisted in backend database. We often consume multiple public APIs offered by different providers in our applications. Thus the motivation of this project is to persist some mock data in a backend database and exposing the data as a RESTful endpoint. A basic android client has been added to test the consumption. The frameworks has been used are:
+This project has simulated a RESTful API which exposes data persisted in backend database serialised in JSON format. We often consume multiple public APIs offered by different providers in our applications. Thus the motivation of this project is to create a simulation to persist some mock data in a backend database and exposing the data as a RESTful endpoint. A basic android client has been added to test the consumption. The frameworks have been used are:
 
 - [Java EE](https://javaee.github.io)
 - [Docker](https://www.docker.com)
