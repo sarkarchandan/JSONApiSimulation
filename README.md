@@ -39,12 +39,12 @@ First execution of the project will take a little time since docker will downloa
 ```http://localhost:8888/server/add_faculty``` 
 on any browser will open an interface for adding the faculty groups which will also list down the currently available faculty groups in the database (initially blank).
 
-<img src="https://cloud.githubusercontent.com/assets/19269229/26532124/6ba4499e-43f9-11e7-80db-7cb020eaf490.png" width="300" height="120"i>
+<img src="https://cloud.githubusercontent.com/assets/19269229/26532124/6ba4499e-43f9-11e7-80db-7cb020eaf490.png" width="300" height="120">
 
 ```http://localhost:8888/server/add_course``` 
 on any browser will open an interface for adding the courses to all available faculty groups which will also list down the currently available courses in the database (initially blank).
 
-<img src="https://cloud.githubusercontent.com/assets/19269229/26532146/9859015a-43f9-11e7-8c84-56ab9afcd30c.png" width="300" height="150"i>
+<img src="https://cloud.githubusercontent.com/assets/19269229/26532146/9859015a-43f9-11e7-8c84-56ab9afcd30c.png" width="300" height="150">
 
 ```http://localhost:8888/server/endpoint/rest/faculties``` will mimic a RESTful Api to expose the data currently stored in the PostgreSQL database serialised in JSON format.
 
